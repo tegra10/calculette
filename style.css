@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color1: #30c3a0;
+  --color2: #1570dd;
+  --color3: #23b3c9;
+  --color4: #30c3e1;
+}
+
+body {
+  background: var(--color1);
+}
+
+.app {
+  margin: 0 auto;
+  width: 300px;
+  border: 2px solid var(--color2);
+  border-radius: 10px;
+  margin-top: 50px;
+  box-shadow: 2px 2px 2px 2px var(--color3);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 30px repeat(6, 30px);
+  grid-template-areas:
+    "res res res res "
+    "1 2 3 clear"
+    "4 5 6 clear"
+    "7 8 9 clear"
+    "0 minus dot plus"
+    "equal equal div times";
+}
+
+h3 {
+  grid-area: res;
+}
+#clear {
+  grid-area: clear;
+}
+
+#equal {
+  grid-area: equal;
+}
+
+button {
+  transition: 0.5s;
+  margin: 0.3px;
+  border-radius: 10px;
+}
+button:hover {
+  transform: scale(1.1);
+  background: var(--color4);
+}
