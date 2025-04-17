@@ -1,59 +1,83 @@
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 :root {
-    --color1: #30c3a0;
-    --color2: #1570dd;
-    --color3: #23b3c9;
-    --color4: #30c3e1;
+  --color-bg: #e0f7fa;
+  --color-primary: #00796b;
+  --color-secondary: #004d40;
+  --color-accent: #26a69a;
+  --color-text: #ffffff;
 }
 
 body {
-    background: var(--color1);
+  background: var(--color-bg);
+  font-family: "Arial", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 .app {
-    margin: 0 auto;
-    width: 300px;
-    border: 2px solid var(--color2);
-    border-radius: 10px;
-    margin-top: 50px;
-    box-shadow: 2px 2px 2px 2px var(--color3);
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 30px repeat(6, 30px);
-    grid-template-areas:
-        "res res res res "
-        "1 2 3 clear"
-        "4 5 6 clear"
-        "7 8 9 clear"
-        "0 minus dot plus"
-        "equal equal div times";
+  width: 350px;
+  border: 2px solid var(--color-primary);
+  border-radius: 15px;
+  margin-top: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 50px repeat(5, 50px);
+  grid-template-areas:
+    "res res res res"
+    "1 2 3 clear"
+    "4 5 6 clear"
+    "7 8 9 clear"
+    "0 minus dot plus"
+    "equal equal div times";
+  background-color: var(--color-secondary);
 }
 
 h3 {
-    grid-area: res;
-    text-align: right;
-    margin: 10px;
-    color: white;
-    font-size: 25px;
+  grid-area: res;
+  text-align: right;
+  margin: 0;
+  padding: 10px;
+  font-size: 30px;
+  border: 1px solid var(--color-accent);
+  border-radius: 5px;
+  background-color: var(--color-primary);
+  line-height: 1.2;
 }
+
 #clear {
-    grid-area: clear;
+  grid-area: clear;
 }
 
 #equal {
-    grid-area: equal;
+  grid-area: equal;
+  background-color: var(--color-accent);
+  color: var(--color-text);
+  font-weight: bold;
 }
 
 button {
-    transition: 0.5s;
-    margin: 0.3px;
-    border-radius: 10px;
+  transition: 0.3s;
+  margin: 5px;
+  border-radius: 10px;
+  background-color: var(--color-primary);
+  color: var(--color-text);
+  font-size: 20px;
 }
+
 button:hover {
-    transform: scale(1.1);
-    background: var(--color4);
+  transform: scale(1.1);
+  background: var(--color-accent);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+button:active {
+  transform: scale(0.95);
 }
